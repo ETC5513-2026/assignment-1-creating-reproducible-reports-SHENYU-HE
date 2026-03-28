@@ -1,5 +1,17 @@
 ---
 title: "Untitled"
-format: 
+author: Shenyu He 36032026
+format:
+  html: 
+   toc: true
+  pdf: 
+   toc: true
 ---
 
+
+```{r}
+library(tidyverse)
+raw_data <- read_csv("./data/36032026_Shenyu He.csv")
+getwd()
+view(raw_data)
+```
