@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Assignment1"
 author: Shenyu He 36032026
 format:
   html: 
@@ -8,10 +8,15 @@ format:
    toc: true
 ---
 
-
 ```{r}
+#| include: false 
 library(tidyverse)
-raw_data <- read_csv("./data/36032026_Shenyu He.csv")
-getwd()
-view(raw_data)
+library(lubridate)
+library(knitr)
 ```
+
+## Introduction
+The purchase amount of consumers greatly affects the profitability and development of the company. As the supervisor of the company, I need to consider whether the company's marketing activities play a role in promoting the purchase amount of consumers across different customers and provide data support for the company's decision-making.
+
+## Research question
+In this research, I will focus on the variables between "marketing_spend" and "purchase amount" to find out their relationship, I will also consider the impact of different types of consumers and the purchase amount.
