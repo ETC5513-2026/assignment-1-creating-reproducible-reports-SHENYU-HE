@@ -56,6 +56,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">Dataset Description</a>
   <ul class="collapse">
   <li><a href="#subsection-1" id="toc-subsection-1" class="nav-link" data-scroll-target="#subsection-1">Subsection 1</a></li>
+  <li><a href="#subsection-2" id="toc-subsection-2" class="nav-link" data-scroll-target="#subsection-2">Subsection 2</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="assignment1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -106,6 +107,72 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="subsection-1">Subsection 1</h3>
 <p>the Data set includes 132 observations and 7 variables, the variables types include numeric (<code>marketing_spend</code>, <code>purchase_amount</code>, <code>visits</code>) and categorical (<code>segment</code> <code>customer_id</code> ), Date(<code>signup_date</code>) and text(<code>notes</code>).</p>
 <p>The <code>customer_id</code> is each consumer’s identity, and the <code>marketing_spend</code> represents the amount of marketing investment for each consumer. <code>purchase_amount</code> means consumer purchase amount, and the <code>signup_date</code> represents the signup date of consumers. The <code>visits</code> is the number of times consumers have visited. And the <code>segment</code> is the consumer categories; the <code>notes</code> is the additional notes about the consumers.</p>
+</section>
+<section id="subsection-2" class="level3">
+<h3 class="anchored" data-anchor-id="subsection-2">Subsection 2</h3>
+<div class="cell">
+<div id="tbl-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: summarize the different segments
+</figcaption>
+<div aria-describedby="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">segment</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">avg_spend</th>
+<th style="text-align: right;">avg_purchase</th>
+<th style="text-align: right;">avg_visits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Consumer</td>
+<td style="text-align: right;">78</td>
+<td style="text-align: right;">153.77</td>
+<td style="text-align: right;">139.64</td>
+<td style="text-align: right;">5.72</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Enterprise</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">107.93</td>
+<td style="text-align: right;">132.60</td>
+<td style="text-align: right;">4.75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SMB</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">149.06</td>
+<td style="text-align: right;">157.87</td>
+<td style="text-align: right;">5.48</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The <a href="#tbl-summary" class="quarto-xref">Table&nbsp;1</a> summarizes the data of different segments; it shows the average marketing spend, the average purchase amount, and the average number of visits. Also it shows the number of different segments. According to the <a href="#tbl-summary" class="quarto-xref">Table&nbsp;1</a>, the SMB has the strongest return, with average purchases amount (157.87) exceeding average marketing spend (149.06).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-segment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-segment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assignment1_files/figure-html/fig-segment-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-segment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The number of different segments
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The <a href="#fig-segment" class="quarto-xref">Figure&nbsp;1</a> shows the number of three different segments; the consumer has 78 customers, which is the highest group of the segment. And the Enterprise has 12 customers, which is the lowest one. The SMB has 42 customers.</p>
 </section>
 </section>
 

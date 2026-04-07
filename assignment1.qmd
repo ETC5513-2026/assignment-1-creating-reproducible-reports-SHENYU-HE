@@ -53,3 +53,34 @@ tidy_data <- raw_data |>
 the Data set includes `r nrow(tidy_data)` observations and `r ncol(tidy_data)` variables, the variables types include numeric (`marketing_spend`, `purchase_amount`, `visits`) and categorical (`segment` `customer_id` ), Date(`signup_date`) and text(`notes`).
 
 The `customer_id` is each consumer's identity, and the `marketing_spend` represents the amount of marketing investment for each consumer. `purchase_amount` means consumer purchase amount, and the `signup_date` represents the signup date of consumers. The `visits` is the number of times consumers have visited. And the `segment` is the consumer categories; the `notes` is the additional notes about the consumers.
+
+### Subsection 2
+
+```{r}
+#| label: tbl-summary
+#| tbl-cap: summarize the different segments
+summary_table <- tidy_data |> 
+  group_by(segment) |> 
+  summarise(
+    n = n(),
+    avg_spend = mean(marketing_spend),
+    avg_purchase = mean(purchase_amount),
+    avg_visits = mean(visits)
+  )
+
+kable(summary_table, digits = 2)
+```
+
+The @tbl-summary summarizes the data of different segments; it shows the average marketing spend, the average purchase amount, and the average number of visits. Also it shows the number of different segments. According to the @tbl-summary, the SMB has the strongest return, with average purchases amount (157.87) exceeding average marketing spend (149.06).
+
+```{r}
+#| label: fig-segment
+#| fig-cap: The number of different segments
+ggplot(tidy_data,
+       aes(x = segment,
+           fill = segment)) +
+  geom_bar() +
+  labs(title = "The number of different segments")
+```
+
+The @fig-segment  shows the number of three different segments; the consumer has 78 customers, which is the highest group of the segment. And the Enterprise has 12 customers, which is the lowest one. The SMB has 42 customers.
