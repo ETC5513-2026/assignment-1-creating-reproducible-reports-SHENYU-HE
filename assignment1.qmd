@@ -13,8 +13,8 @@ execute:
 ---
 
 ```{r}
+#| label: setup
 #| include: false
-#| label: seting up
 library(tidyverse)
 library(lubridate)
 library(knitr)
@@ -22,19 +22,18 @@ library(here)
 ```
 
 ## Introduction
-The purchase amount of consumers greatly affects the profitability and development of the company. As the supervisor of the company, I need to consider whether the company's marketing activities play a role in promoting the purchase amount of consumers across different customers and provide data support for the company's decision-making.
+Consumers' purchase amounts greatly affects the profitability and development of a company. As the supervisor of the company, I need to consider whether the company's marketing activities play a role in increasing the purchase amount of consumers across different customers and provide data support for the company's decision-making.
 
 ## Research question
-In this research I will focus on the variables between "marketing_spend" and "purchase amount" to find out their relationship, I will also consider the impact of different types of consumers and the purchase amount.
-
+In this research I will focus on the variables between `marketing_spend` and `purchase amount` to find out their relationship, I will also consider the impact of different types of consumers and the purchase amount.
 
 ## dataset Introduction 
-The data set records how much was spent on marketing for each customer(marketing spend) and their corresponding purchase amounts. other variables include customer visits, segments, customer ID, sign up date and customer's note.
+The dataset records how much was spent on marketing for each customer(marketing spend) and their corresponding purchase amounts. Other variables include customer visits, segments, customer ID, signup date and customer note.
 
-After tidying the data set, I convert all string "N/A" in the `signup_date` variable into a proper missing value and convert mixed date formats into a proper datetime format. Finally remove the missing values from `purchase_amounts`.
+After tidying the data set, I converted all string "N/A" in the `signup_date` variable into a proper missing value and converted mixed date formats into a proper datetime format. Finally removed the missing values from `purchase_amount`.
 
 ```{r}
-#| label: tidy data
+#| label: tidy-data
 raw_data <- read_csv("./data/36032026_Shenyu He.csv")
 
 tidy_data <- raw_data |> 
@@ -50,9 +49,9 @@ tidy_data <- raw_data |>
 
 ### Subsection 1
 
-the Data set includes `r nrow(tidy_data)` observations and `r ncol(tidy_data)` variables, the variables types include numeric (`marketing_spend`, `purchase_amount`, `visits`) and categorical (`segment` `customer_id` ), Date(`signup_date`) and text(`notes`).
+the Dataset includes `r nrow(tidy_data)` observations and `r ncol(tidy_data)` variables. The variable types include numeric (`marketing_spend`, `purchase_amount`, `visits`), categorical (`segment`, `customer_id` ), Date(`signup_date`) and text variable (`notes`).
 
-The `customer_id` is each consumer's identity, and the `marketing_spend` represents the amount of marketing investment for each consumer. `purchase_amount` means consumer purchase amount, and the `signup_date` represents the signup date of consumers. The `visits` is the number of times consumers have visited. And the `segment` is the consumer categories; the `notes` is the additional notes about the consumers.
+`customer_id` identifies each consumer, and `marketing_spend` represents the amount of marketing investment for each consumer. `purchase_amount` refers to the consumer's purchase amount, while `signup_date` represents the signup date of consumers. The `visits` is the number of times consumers have visited. `segment` is the consumer categories; `notes` is the additional notes about the consumers.
 
 ### Subsection 2
 
@@ -71,7 +70,7 @@ summary_table <- tidy_data |>
 kable(summary_table, digits = 2)
 ```
 
-The @tbl-summary summarizes the data of different segments; it shows the average marketing spend, the average purchase amount, and the average number of visits. Also it shows the number of different segments. According to the @tbl-summary, the SMB has the strongest return, with average purchases amount (157.87) exceeding average marketing spend (149.06).
+The @tbl-summary summarizes the data of different segments; it shows the average marketing spend, the average purchase amount, the average number of visits and the number of different segments. According to the @tbl-summary, the SMB shows the strongest return, with an average purchase amount (157.87) that exceeds its average marketing spend (149.06).
 
 ```{r}
 #| label: fig-segment
@@ -83,4 +82,35 @@ ggplot(tidy_data,
   labs(title = "The number of different segments")
 ```
 
-The @fig-segment  shows the number of three different segments; the consumer has 78 customers, which is the highest group of the segment. And the Enterprise has 12 customers, which is the lowest one. The SMB has 42 customers.
+The @fig-segment  shows the number of three different segments; the consumer has 78 customers, which is the highest group of the segment, while the Enterprise has 12 customers, which is the lowest one. The SMB has 42 customers.
+
+
+## Results
+
+```{r}
+#| label: fig-linear_regression
+#| fig-cap: model of marketing spend & purchase amount
+ggplot(tidy_data, aes(x = marketing_spend, y = purchase_amount)) +
+  labs(title = "Model between marketing spend & purchase amount") +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE)
+```
+
+```{r}
+#| include: false
+linear_regression <- lm(purchase_amount~marketing_spend, data = tidy_data)
+summary(linear_regression)
+```
+
+The @fig-linear_regression shows a clear linear regression line and it means a positive linear association between the `marketing_spend` and `purchase_amount`. When the `marketing_spend `increases, the `purchase_amount` increases as well, and so it suggests a positive association. The confidence interval indicates that the relationship between `marketing_spend` and `purchase_amount` is reliable. From the summary of the regression, the p-value is smaller than 2.2e-16, which means the `marketing_spend` and` purchase_amount` is highly statistically significant. The R squared is `r round(summary(linear_regression)$r.squared, 3)` , it shows that the model explains approximately 68.6% of the variation in purchase amount.
+
+```{r}
+#| label: fig-segment_boxplot
+#| fig-cap: Purchase amount in three segments
+ggplot(tidy_data, 
+       aes(x = segment, y = purchase_amount, fill = segment)) +
+  geom_boxplot() +
+  labs(title = "Purchase amount in three segments") 
+```
+
+The @fig-segment_boxplot shows the difference of purchase amount from three segments. The spread shows that the purchase amount of Enterprise and SMB shows a relatively stable range, while that of consumers has a much larger variation. According to each median line, the SMB is the highest median purchase amount(160s), and the second highest is Consumer (130s), while Enterprise customers exhibit the lowest median purchase amount (110s). It means that the SMB appears to be the most valuable segment, as they tend to generate higher purchase amounts.

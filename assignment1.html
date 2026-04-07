@@ -58,6 +58,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#subsection-1" id="toc-subsection-1" class="nav-link" data-scroll-target="#subsection-1">Subsection 1</a></li>
   <li><a href="#subsection-2" id="toc-subsection-2" class="nav-link" data-scroll-target="#subsection-2">Subsection 2</a></li>
   </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="assignment1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
@@ -90,23 +91,23 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>The purchase amount of consumers greatly affects the profitability and development of the company. As the supervisor of the company, I need to consider whether the company’s marketing activities play a role in promoting the purchase amount of consumers across different customers and provide data support for the company’s decision-making.</p>
+<p>Consumers’ purchase amounts greatly affects the profitability and development of a company. As the supervisor of the company, I need to consider whether the company’s marketing activities play a role in increasing the purchase amount of consumers across different customers and provide data support for the company’s decision-making.</p>
 </section>
 <section id="research-question" class="level2">
 <h2 class="anchored" data-anchor-id="research-question">Research question</h2>
-<p>In this research I will focus on the variables between “marketing_spend” and “purchase amount” to find out their relationship, I will also consider the impact of different types of consumers and the purchase amount.</p>
+<p>In this research I will focus on the variables between <code>marketing_spend</code> and <code>purchase amount</code> to find out their relationship, I will also consider the impact of different types of consumers and the purchase amount.</p>
 </section>
 <section id="dataset-introduction" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-introduction">dataset Introduction</h2>
-<p>The data set records how much was spent on marketing for each customer(marketing spend) and their corresponding purchase amounts. other variables include customer visits, segments, customer ID, sign up date and customer’s note.</p>
-<p>After tidying the data set, I convert all string “N/A” in the <code>signup_date</code> variable into a proper missing value and convert mixed date formats into a proper datetime format. Finally remove the missing values from <code>purchase_amounts</code>.</p>
+<p>The dataset records how much was spent on marketing for each customer(marketing spend) and their corresponding purchase amounts. Other variables include customer visits, segments, customer ID, signup date and customer note.</p>
+<p>After tidying the data set, I converted all string “N/A” in the <code>signup_date</code> variable into a proper missing value and converted mixed date formats into a proper datetime format. Finally removed the missing values from <code>purchase_amount</code>.</p>
 </section>
 <section id="dataset-description" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-description">Dataset Description</h2>
 <section id="subsection-1" class="level3">
 <h3 class="anchored" data-anchor-id="subsection-1">Subsection 1</h3>
-<p>the Data set includes 132 observations and 7 variables, the variables types include numeric (<code>marketing_spend</code>, <code>purchase_amount</code>, <code>visits</code>) and categorical (<code>segment</code> <code>customer_id</code> ), Date(<code>signup_date</code>) and text(<code>notes</code>).</p>
-<p>The <code>customer_id</code> is each consumer’s identity, and the <code>marketing_spend</code> represents the amount of marketing investment for each consumer. <code>purchase_amount</code> means consumer purchase amount, and the <code>signup_date</code> represents the signup date of consumers. The <code>visits</code> is the number of times consumers have visited. And the <code>segment</code> is the consumer categories; the <code>notes</code> is the additional notes about the consumers.</p>
+<p>the Dataset includes 132 observations and 7 variables. The variable types include numeric (<code>marketing_spend</code>, <code>purchase_amount</code>, <code>visits</code>), categorical (<code>segment</code>, <code>customer_id</code> ), Date(<code>signup_date</code>) and text variable (<code>notes</code>).</p>
+<p><code>customer_id</code> identifies each consumer, and <code>marketing_spend</code> represents the amount of marketing investment for each consumer. <code>purchase_amount</code> refers to the consumer’s purchase amount, while <code>signup_date</code> represents the signup date of consumers. The <code>visits</code> is the number of times consumers have visited. <code>segment</code> is the consumer categories; <code>notes</code> is the additional notes about the consumers.</p>
 </section>
 <section id="subsection-2" class="level3">
 <h3 class="anchored" data-anchor-id="subsection-2">Subsection 2</h3>
@@ -157,7 +158,7 @@ Table&nbsp;1: summarize the different segments
 </figure>
 </div>
 </div>
-<p>The <a href="#tbl-summary" class="quarto-xref">Table&nbsp;1</a> summarizes the data of different segments; it shows the average marketing spend, the average purchase amount, and the average number of visits. Also it shows the number of different segments. According to the <a href="#tbl-summary" class="quarto-xref">Table&nbsp;1</a>, the SMB has the strongest return, with average purchases amount (157.87) exceeding average marketing spend (149.06).</p>
+<p>The <a href="#tbl-summary" class="quarto-xref">Table&nbsp;1</a> summarizes the data of different segments; it shows the average marketing spend, the average purchase amount, the average number of visits and the number of different segments. According to the <a href="#tbl-summary" class="quarto-xref">Table&nbsp;1</a>, the SMB shows the strongest return, with an average purchase amount (157.87) that exceeds its average marketing spend (149.06).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-segment" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -172,8 +173,41 @@ Figure&nbsp;1: The number of different segments
 </div>
 </div>
 </div>
-<p>The <a href="#fig-segment" class="quarto-xref">Figure&nbsp;1</a> shows the number of three different segments; the consumer has 78 customers, which is the highest group of the segment. And the Enterprise has 12 customers, which is the lowest one. The SMB has 42 customers.</p>
+<p>The <a href="#fig-segment" class="quarto-xref">Figure&nbsp;1</a> shows the number of three different segments; the consumer has 78 customers, which is the highest group of the segment, while the Enterprise has 12 customers, which is the lowest one. The SMB has 42 customers.</p>
 </section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-linear_regression" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-linear_regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assignment1_files/figure-html/fig-linear_regression-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linear_regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: model of marketing spend &amp; purchase amount
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The <a href="#fig-linear_regression" class="quarto-xref">Figure&nbsp;2</a> shows a clear linear regression line and it means a positive linear association between the <code>marketing_spend</code> and <code>purchase_amount</code>. When the <code>marketing_spend</code>increases, the <code>purchase_amount</code> increases as well, and so it suggests a positive association. The confidence interval indicates that the relationship between <code>marketing_spend</code> and <code>purchase_amount</code> is reliable. From the summary of the regression, the p-value is smaller than 2.2e-16, which means the <code>marketing_spend</code> and<code>purchase_amount</code> is highly statistically significant. The R squared is 0.686 , it shows that the model explains approximately 68.6% of the variation in purchase amount.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-segment_boxplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-segment_boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assignment1_files/figure-html/fig-segment_boxplot-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-segment_boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Purchase amount in three segments
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The <a href="#fig-segment_boxplot" class="quarto-xref">Figure&nbsp;3</a> shows the difference of purchase amount from three segments. The spread shows that the purchase amount of Enterprise and SMB shows a relatively stable range, while that of consumers has a much larger variation. According to each median line, the SMB is the highest median purchase amount(160s), and the second highest is Consumer (130s), while Enterprise customers exhibit the lowest median purchase amount (110s). It means that the SMB appears to be the most valuable segment, as they tend to generate higher purchase amounts.</p>
 </section>
 
 </main>
