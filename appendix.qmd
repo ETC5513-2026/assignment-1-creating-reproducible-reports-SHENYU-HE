@@ -1,0 +1,10 @@
+---
+title: "AI announcement"
+author: Shenyu He 36032026
+format:
+  html: 
+   toc: true
+  pdf: 
+   toc: true
+---
+
