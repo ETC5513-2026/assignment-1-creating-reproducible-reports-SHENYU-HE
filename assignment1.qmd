@@ -6,17 +6,50 @@ format:
    toc: true
   pdf: 
    toc: true
+execute: 
+  warning: false
+  message: false
+  echo: false
 ---
 
 ```{r}
-#| include: false 
+#| include: false
+#| label: seting up
 library(tidyverse)
 library(lubridate)
 library(knitr)
+library(here)
 ```
 
 ## Introduction
 The purchase amount of consumers greatly affects the profitability and development of the company. As the supervisor of the company, I need to consider whether the company's marketing activities play a role in promoting the purchase amount of consumers across different customers and provide data support for the company's decision-making.
 
 ## Research question
-In this research, I will focus on the variables between "marketing_spend" and "purchase amount" to find out their relationship, I will also consider the impact of different types of consumers and the purchase amount.
+In this research I will focus on the variables between "marketing_spend" and "purchase amount" to find out their relationship, I will also consider the impact of different types of consumers and the purchase amount.
+
+
+## dataset Introduction 
+The data set records how much was spent on marketing for each customer(marketing spend) and their corresponding purchase amounts. other variables include customer visits, segments, customer ID, sign up date and customer's note.
+
+After tidying the data set, I convert all string "N/A" in the `signup_date` variable into a proper missing value and convert mixed date formats into a proper datetime format. Finally remove the missing values from `purchase_amounts`.
+
+```{r}
+#| label: tidy data
+raw_data <- read_csv("./data/36032026_Shenyu He.csv")
+
+tidy_data <- raw_data |> 
+  distinct() |>
+  mutate(signup_date = na_if(signup_date, "N/A"),
+  signup_date = parse_date_time(signup_date, 
+  orders = c("ymd", "dmy", "B d, Y"))
+  ) |> 
+  filter(!is.na(purchase_amount))
+```
+
+## Dataset Description
+
+### Subsection 1
+
+the Data set includes `r nrow(tidy_data)` observations and `r ncol(tidy_data)` variables, the variables types include numeric (`marketing_spend`, `purchase_amount`, `visits`) and categorical (`segment` `customer_id` ), Date(`signup_date`) and text(`notes`).
+
+The `customer_id` is each consumer's identity, and the `marketing_spend` represents the amount of marketing investment for each consumer. `purchase_amount` means consumer purchase amount, and the `signup_date` represents the signup date of consumers. The `visits` is the number of times consumers have visited. And the `segment` is the consumer categories; the `notes` is the additional notes about the consumers.

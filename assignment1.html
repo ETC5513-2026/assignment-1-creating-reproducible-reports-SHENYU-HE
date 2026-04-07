@@ -46,8 +46,20 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="assignment1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
+  <li><a href="#dataset-introduction" id="toc-dataset-introduction" class="nav-link" data-scroll-target="#dataset-introduction">dataset Introduction</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">Dataset Description</a>
+  <ul class="collapse">
+  <li><a href="#subsection-1" id="toc-subsection-1" class="nav-link" data-scroll-target="#subsection-1">Subsection 1</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="assignment1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -75,7 +87,27 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The purchase amount of consumers greatly affects the profitability and development of the company. As the supervisor of the company, I need to consider whether the company’s marketing activities play a role in promoting the purchase amount of consumers across different customers and provide data support for the company’s decision-making.</p>
+</section>
+<section id="research-question" class="level2">
+<h2 class="anchored" data-anchor-id="research-question">Research question</h2>
+<p>In this research I will focus on the variables between “marketing_spend” and “purchase amount” to find out their relationship, I will also consider the impact of different types of consumers and the purchase amount.</p>
+</section>
+<section id="dataset-introduction" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-introduction">dataset Introduction</h2>
+<p>The data set records how much was spent on marketing for each customer(marketing spend) and their corresponding purchase amounts. other variables include customer visits, segments, customer ID, sign up date and customer’s note.</p>
+<p>After tidying the data set, I convert all string “N/A” in the <code>signup_date</code> variable into a proper missing value and convert mixed date formats into a proper datetime format. Finally remove the missing values from <code>purchase_amounts</code>.</p>
+</section>
+<section id="dataset-description" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-description">Dataset Description</h2>
+<section id="subsection-1" class="level3">
+<h3 class="anchored" data-anchor-id="subsection-1">Subsection 1</h3>
+<p>the Data set includes 132 observations and 7 variables, the variables types include numeric (<code>marketing_spend</code>, <code>purchase_amount</code>, <code>visits</code>) and categorical (<code>segment</code> <code>customer_id</code> ), Date(<code>signup_date</code>) and text(<code>notes</code>).</p>
+<p>The <code>customer_id</code> is each consumer’s identity, and the <code>marketing_spend</code> represents the amount of marketing investment for each consumer. <code>purchase_amount</code> means consumer purchase amount, and the <code>signup_date</code> represents the signup date of consumers. The <code>visits</code> is the number of times consumers have visited. And the <code>segment</code> is the consumer categories; the <code>notes</code> is the additional notes about the consumers.</p>
+</section>
+</section>
 
 </main>
 <!-- /main column -->
