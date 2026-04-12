@@ -8,7 +8,7 @@
 
 <meta name="author" content="Shenyu He 36032026">
 
-<title>The impact of marketing spending on customer purchase amount</title>
+<title>AI announcement</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,17 +27,17 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="assignment1_files/libs/clipboard/clipboard.min.js"></script>
-<script src="assignment1_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="assignment1_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="assignment1_files/libs/quarto-html/popper.min.js"></script>
-<script src="assignment1_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="assignment1_files/libs/quarto-html/anchor.min.js"></script>
-<link href="assignment1_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="assignment1_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="assignment1_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="assignment1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="assignment1_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="appendix_files/libs/clipboard/clipboard.min.js"></script>
+<script src="appendix_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="appendix_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="appendix_files/libs/quarto-html/popper.min.js"></script>
+<script src="appendix_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="appendix_files/libs/quarto-html/anchor.min.js"></script>
+<link href="appendix_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="appendix_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="appendix_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="appendix_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="appendix_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -46,27 +46,12 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
-  <li><a href="#dataset-introduction" id="toc-dataset-introduction" class="nav-link" data-scroll-target="#dataset-introduction">dataset Introduction</a></li>
-  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">Dataset Description</a>
-  <ul class="collapse">
-  <li><a href="#subsection-1" id="toc-subsection-1" class="nav-link" data-scroll-target="#subsection-1">Subsection 1</a></li>
-  <li><a href="#subsection-2" id="toc-subsection-2" class="nav-link" data-scroll-target="#subsection-2">Subsection 2</a></li>
-  </ul></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="assignment1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
-</div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="appendix.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The impact of marketing spending on customer purchase amount</h1>
+<h1 class="title">AI announcement</h1>
 </div>
 
 
@@ -89,125 +74,85 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Consumers’ purchase amounts greatly affects the profitability and development of a company. As the supervisor of the company, I need to consider whether the company’s marketing activities play a role in increasing the purchase amount of consumers across different customers and provide data support for the company’s decision-making.</p>
-</section>
-<section id="research-question" class="level2">
-<h2 class="anchored" data-anchor-id="research-question">Research question</h2>
-<p>In this research I will focus on the variables between <code>marketing_spend</code> and <code>purchase amount</code> to find out their relationship, I will also consider the impact of different types of consumers and the purchase amount.</p>
-</section>
-<section id="dataset-introduction" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-introduction">dataset Introduction</h2>
-<p>The dataset records how much was spent on marketing for each customer(marketing spend) and their corresponding purchase amounts. Other variables include customer visits, segments, customer ID, signup date and customer note.</p>
-<p>After tidying the data set, I converted all string “N/A” in the <code>signup_date</code> variable into a proper missing value and converted mixed date formats into a proper datetime format. Finally removed the missing values from <code>purchase_amount</code>.</p>
-</section>
-<section id="dataset-description" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-description">Dataset Description</h2>
-<section id="subsection-1" class="level3">
-<h3 class="anchored" data-anchor-id="subsection-1">Subsection 1</h3>
-<p>the Dataset includes 132 observations and 7 variables. The variable types include numeric (<code>marketing_spend</code>, <code>purchase_amount</code>, <code>visits</code>), categorical (<code>segment</code>, <code>customer_id</code> ), Date(<code>signup_date</code>) and text variable (<code>notes</code>).</p>
-<p><code>customer_id</code> identifies each consumer, and <code>marketing_spend</code> represents the amount of marketing investment for each consumer. <code>purchase_amount</code> refers to the consumer’s purchase amount, while <code>signup_date</code> represents the signup date of consumers. The <code>visits</code> is the number of times consumers have visited. <code>segment</code> is the consumer categories; <code>notes</code> is the additional notes about the consumers.</p>
-</section>
-<section id="subsection-2" class="level3">
-<h3 class="anchored" data-anchor-id="subsection-2">Subsection 2</h3>
-<div class="cell">
-<div id="tbl-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: summarize the different segments
-</figcaption>
-<div aria-describedby="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="cell caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">segment</th>
-<th style="text-align: right;">n</th>
-<th style="text-align: right;">avg_spend</th>
-<th style="text-align: right;">avg_purchase</th>
-<th style="text-align: right;">avg_visits</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Consumer</td>
-<td style="text-align: right;">78</td>
-<td style="text-align: right;">153.77</td>
-<td style="text-align: right;">139.64</td>
-<td style="text-align: right;">5.72</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Enterprise</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">107.93</td>
-<td style="text-align: right;">132.60</td>
-<td style="text-align: right;">4.75</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">SMB</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">149.06</td>
-<td style="text-align: right;">157.87</td>
-<td style="text-align: right;">5.48</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>The <a href="#tbl-summary" class="quarto-xref">Table&nbsp;1</a> summarizes the data of different segments; it shows the average marketing spend, the average purchase amount, the average number of visits and the number of different segments. According to the <a href="#tbl-summary" class="quarto-xref">Table&nbsp;1</a>, the SMB shows the strongest return, with an average purchase amount (157.87) that exceeds its average marketing spend (149.06).</p>
+<section id="ai-announcement" class="level1">
+<h1>AI announcement</h1>
+<p>In my assignment1</p>
+<p>I used ChatGPT as my support tool to help me understand some functions and grammar that I didn’t know. The AI provided some code examples to help me understand the functions that I hadn’t learned. I used AI to: Show me how to use the functions that I want to code with my assignment. provide some example to read all csv data in one folder. explain some functions grammar and check the correctness of my code. The completion of this assignment and the code writing were all done by myself. I only used the AI to tell me how to understand the function packages and the grammar logic of the functions, and pointed out the problems in the code that I wrote.</p>
+<section id="screenshots" class="level2">
+<h2 class="anchored" data-anchor-id="screenshots">Screenshots</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-segment" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-segment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assignment1_files/figure-html/fig-segment-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-segment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: The number of different segments
-</figcaption>
+<div>
+<figure class="figure">
+<p><img src="images/date%20convert.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>The <a href="#fig-segment" class="quarto-xref">Figure&nbsp;1</a> shows the number of three different segments; the consumer has 78 customers, which is the highest group of the segment, while the Enterprise has 12 customers, which is the lowest one. The SMB has 42 customers.</p>
-</section>
-</section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-linear_regression" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-linear_regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assignment1_files/figure-html/fig-linear_regression-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linear_regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: model of marketing spend &amp; purchase amount
-</figcaption>
+<div>
+<figure class="figure">
+<p><img src="images/boxplot1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>The <a href="#fig-linear_regression" class="quarto-xref">Figure&nbsp;2</a> shows a clear linear regression line and it means a positive linear association between the <code>marketing_spend</code> and <code>purchase_amount</code>. When the <code>marketing_spend</code>increases, the <code>purchase_amount</code> increases as well, and so it suggests a positive association. The confidence interval indicates that the relationship between <code>marketing_spend</code> and <code>purchase_amount</code> is reliable. From the summary of the regression, the p-value is smaller than 2.2e-16, which means the <code>marketing_spend</code> and<code>purchase_amount</code> is highly statistically significant. The R squared is 0.686 , it shows that the model explains approximately 68.6% of the variation in purchase amount.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-segment_boxplot" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-segment_boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assignment1_files/figure-html/fig-segment_boxplot-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-segment_boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Purchase amount in three segments
-</figcaption>
+<div>
+<figure class="figure">
+<p><img src="images/boxplot2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>The <a href="#fig-segment_boxplot" class="quarto-xref">Figure&nbsp;3</a> shows the difference of purchase amount from three segments. The spread shows that the purchase amount of Enterprise and SMB shows a relatively stable range, while that of consumers has a much larger variation. According to each median line, the SMB is the highest median purchase amount(160s), and the second highest is Consumer (130s), while Enterprise customers exhibit the lowest median purchase amount (110s). It means that the SMB appears to be the most valuable segment, as they tend to generate higher purchase amounts.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/ggplot1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/inline1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/inline2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/screenshot1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/screenshot2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
 </section>
 
 </main>

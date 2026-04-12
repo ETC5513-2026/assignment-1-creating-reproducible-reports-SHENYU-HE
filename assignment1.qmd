@@ -1,5 +1,5 @@
 ---
-title: "Assignment1"
+title: "The impact of marketing spending on customer purchase amount"
 author: Shenyu He 36032026
 format:
   html: 
@@ -82,7 +82,7 @@ ggplot(tidy_data,
   labs(title = "The number of different segments")
 ```
 
-The @fig-segment  shows the number of three different segments; the consumer has 78 customers, which is the highest group of the segment, while the Enterprise has 12 customers, which is the lowest one. The SMB has 42 customers.
+The @fig-segment shows the number of three different segments; the consumer has 78 customers, which is the highest group of the segment, while the Enterprise has 12 customers, which is the lowest one. The SMB has 42 customers.
 
 
 ## Results
